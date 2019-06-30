@@ -1,0 +1,154 @@
+https://codepen.io/sahanah/pen/qzpJaG
+
+body {
+  background: rgb(231, 236, 237);
+  font-family: 'Helvetica', Arial, sans-serif;
+  color: #333;
+  line-height: normal;
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  text-align: center;
+}
+
+.form {
+  background-color: white;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.input-title[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  text-align: center;
+}
+
+.input-description[type=text]:focus {
+  border: 3px solid #555;
+}
+
+.input-description[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  text-align: center;
+}
+
+.input-title[type=text]:focus {
+  border: 3px solid #555;
+}
+
+.add-todo:hover {
+  letter-spacing: 0.8em;
+  background-color: grey;
+}
+
+.add-todo {
+  height: 4em;
+  width: 25%;
+  padding: 1.5em auto;
+  margin: 1em auto;
+  background-color: #555;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  transition: all 0.2s cubic-bezier(.4, 0, .2, 1);
+  display: block;
+  color: white;
+}
+
+.filter-buttons {
+  margin-top: 2em;
+}
+
+.todo-container {
+  display: flex;
+  flex: row nowrap;
+  align-items: flex-start;
+}
+
+.todo-dimension {
+  border-radius: 3px;
+  margin: 10px;
+  width: 300px;
+}
+
+.todo-header {
+  margin: 10px 10px -10px;
+  padding: 0;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+}
+
+.todo-inner-scroll {
+  padding: 0;
+  list-style-type: none;
+  margin-top: 10px;
+  margin-bottom: 0;
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.todo-item {
+  background: white;
+  margin: 10px;
+  margin-bottom: 0;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.todo-item:hover {
+  background: rgb(230, 230, 230);
+}
+
+.todo-title {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.todo-description {
+  max-width: 60%;
+  padding-right: 0em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  margin-right: 0em;
+  font-size: x-small;
+  color: grey;
+  font-style: italic;
+}
+
+.todo-date {
+  text-align: right;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-size: xx-small;
+  color: grey;
+  font-style: italic;
+}
+
+.filter-button {
+  color: white;
+  background-color: #555;
+  border-radius: 0.5em;
+  margin: 0.5em;
+}
+
+.filter-button:hover {
+  letter-spacing: 0.05em;
+  background-color: grey;
+}

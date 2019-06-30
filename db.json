@@ -1,0 +1,18 @@
+{
+  "todos": [
+    {
+      "id": 999,
+      "title": "Go to the Gym",
+      "description": "Summer body here I come!",
+      "date": "July 2, 2019 12:30 PM",
+      "completed": false
+    },
+    {
+      "id": 998,
+      "title": "Do Laundry",
+      "description": "Gotta wash my gym clothes",
+      "date": "July 1, 2019 6:30 PM",
+      "completed": false
+    }
+  ]
+}
