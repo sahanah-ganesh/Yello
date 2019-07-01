@@ -7,8 +7,8 @@ class Edit extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: '',
-      description: '',
+      title: this.props.todo.title,
+      description: this.props.todo.description,
       startDate: '',
     }
     this.handleTitle = this.handleTitle.bind(this);
@@ -30,7 +30,6 @@ class Edit extends Component {
   }
 
   handleDateChange(date) {
-    console.log('date', date)
     this.setState({
       startDate: date
     })
@@ -48,7 +47,7 @@ class Edit extends Component {
       date: this.state.startDate,
       completed: false,
     }
-    const postTodo = (data) => {
+    const putTodo = (data) => {
       return fetch(`http://localhost:3004/todos/${ data.id }`, {
         method: 'PUT',
         body: JSON.stringify(data),
@@ -57,7 +56,7 @@ class Edit extends Component {
         }
       })
     }
-    postTodo(newTodo);
+    putTodo(newTodo);
   }
 
   render() {
@@ -70,26 +69,22 @@ class Edit extends Component {
             <input
               type='text'
               className='input-title'
-              placeholder={ this.props.todo.title || 'Title' }
+              placeholder={ this.props.todo.title }
               onChange={ this.handleTitle }
               />
             <input
               type='text'
               className='input-description'
-              placeholder={ this.props.todo.description || 'Description' }
+              placeholder={ this.props.todo.description }
               onChange={ this.handleDescription }
               />
               <br/>
               <div className='date-input'>
                 <DatePicker
-                  placeholderText={ this.props.todo.date || 'Date' }
+                  placeholder={ this.props.todo.date.substring(0, 10) }
                   selected={ this.state.startDate }
                   onChange={ this.handleDateChange }
-                  showTimeSelect
-                  timeFormat='HH:mm'
-                  timeIntervals={ 30 }
-                  dateFormat='MMMM d, yyyy h:mm aa'
-                  timeCaption='time'
+                  dateFormat="MMMM d, yyyy"
                 />
               </div>
             <button className='add-todo' type='submit'>
