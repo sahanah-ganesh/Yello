@@ -13,6 +13,13 @@
       "description": "Gotta wash my gym clothes",
       "date": "July 1, 2019 6:30 PM",
       "completed": false
+    },
+    {
+      "id": 1,
+      "title": "sfads",
+      "description": "sdfsdfdsfsdf",
+      "date": "2019-05-27T04:00:00.000Z",
+      "completed": false
     }
   ]
 }

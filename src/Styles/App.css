@@ -1,7 +1,5 @@
-https://codepen.io/sahanah/pen/qzpJaG
-
 body {
-  background: rgb(231, 236, 237);
+  background: lightslategrey;
   font-family: 'Helvetica', Arial, sans-serif;
   color: #333;
   line-height: normal;
@@ -9,71 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.App {
-  text-align: center;
-}
-
-.form {
-  background-color: white;
-  padding: 1em;
-  border-radius: 0.5em;
-}
-
-.input-title[type=text] {
-  width: 40%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-  text-align: center;
-}
-
-.input-description[type=text]:focus {
-  border: 3px solid #555;
-}
-
-.input-description[type=text] {
-  width: 70%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-  text-align: center;
-}
-
-.input-title[type=text]:focus {
-  border: 3px solid #555;
-}
-
-.add-todo:hover {
-  letter-spacing: 0.8em;
-  background-color: grey;
-}
-
-.add-todo {
-  height: 4em;
-  width: 25%;
-  padding: 1.5em auto;
-  margin: 1em auto;
-  background-color: #555;
-  border: none;
-  border-radius: 3px;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  transition: all 0.2s cubic-bezier(.4, 0, .2, 1);
-  display: block;
-  color: white;
-}
-
-.filter-buttons {
-  margin-top: 2em;
-}
+/* TODO CONTAINER WITH TODO ITEMS */
 
 .todo-container {
   display: flex;
@@ -85,6 +19,7 @@ body {
   border-radius: 3px;
   margin: 10px;
   width: 300px;
+  background-color: lightgrey;
 }
 
 .todo-header {
@@ -93,6 +28,11 @@ body {
   font-size: 1em;
   font-weight: bold;
   color: black;
+  text-align: center;
+}
+
+.todo-header:hover {
+  color: white;
 }
 
 .todo-inner-scroll {
@@ -115,6 +55,22 @@ body {
 .todo-item:hover {
   background: rgb(230, 230, 230);
 }
+
+.add-todo-button {
+  display: block;
+  font-size: 0.9em;
+  padding: 10px;
+  color: #8C8C8C;
+  border: none;
+  background-color: transparent;
+}
+
+.add-todo-button:hover {
+  cursor: pointer;
+  color: white;
+}
+
+/* TODO ITEM INNER STYLE */
 
 .todo-title {
   margin-top: 0em;
@@ -141,14 +97,142 @@ body {
   font-style: italic;
 }
 
-.filter-button {
+/* ADD CATEGORY BUTTON */
+
+.add-category-button {
+  margin: 10px;
+  padding: 5px;
+  background-color: darkgrey;
+  /* height: 19px; */
+  text-align: left;
+  font-size: 0.9em;
   color: white;
-  background-color: #555;
-  border-radius: 0.5em;
-  margin: 0.5em;
+  border: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
 }
 
-.filter-button:hover {
-  letter-spacing: 0.05em;
-  background-color: grey;
+.add-category-button:hover {
+  background-color: white;
+  cursor: pointer;
+  color: #8C8C8C;
+}
+
+/* EDIT TODO ITEM POPUP FORM */
+
+.popup {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-inner {
+  border-radius: 5px;
+  position: fixed;
+  left: 10%;
+  right: 10%;
+  top: 10%;
+  bottom: 30%;
+  margin: auto;
+  background-color: lightgrey;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1em;
+}
+
+.form {
+  text-align: center;
+}
+
+.input-title[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid lightcoral;
+  border-radius: 3px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  text-align: left;
+}
+
+.input-title[type=text]:focus {
+  border: 3px solid red;
+}
+
+.input-description[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid lightcoral;
+  border-radius: 3px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  text-align: left;
+  margin-top: 1em;
+}
+
+.input-description[type=text]:focus {
+  border: 3px solid red;
+}
+
+.date-input {
+  margin: 8px 0;
+  border: 3px solid lightcoral;
+  max-width: 23.5%;
+  display: inline-block;
+}
+
+.date-input:hover {
+  border: 3px solid red;
+}
+
+.add-todo {
+  height: 4em;
+  width: 40%;
+  padding: 1.5em auto;
+  margin: 1em auto;
+  background-color: lightcoral;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  transition: all 0.2s cubic-bezier(.4, 0, .2, 1);
+  display: block;
+  color: white;
+}
+
+.add-todo:hover {
+  letter-spacing: 0.8em;
+  background-color: red;
+}
+
+.close-edit {
+  height: 4em;
+  width: 50%;
+  padding: 1.5em auto;
+  margin: 15em auto;
+  background-color: darkgrey;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  transition: all 0.2s cubic-bezier(.4, 0, .2, 1);
+  display: block;
+  color: white;
+}
+
+.close-edit:hover {
+  letter-spacing: 0.8em;
+  background-color: black;
 }
