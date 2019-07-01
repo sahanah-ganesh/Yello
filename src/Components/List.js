@@ -51,6 +51,7 @@ export class List extends Component {
     }
     console.log('update', updateTodo)
     this.props.createCompleted(updateTodo);
+    window.location.reload();
   }
 
   render() {
