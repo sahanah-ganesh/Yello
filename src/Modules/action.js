@@ -24,6 +24,25 @@ export function createTodo(todo) {
   }
 }
 
+export function updateTodo(todo) {
+  return function (dispatch) {
+    return fetch(`http://localhost:3004/todos/${todo.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(todo),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      })
+      .then(response => response.json())
+      .then(json => {
+        dispatch({
+          type: 'UPDATE_TODO',
+          payload: json
+        })
+      });
+  }
+}
+
 export function createCompleted(todo) {
   return function(dispatch) {
     return fetch('http://localhost:3004/completed/', {

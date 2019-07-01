@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { updateTodo } from '../Modules/action.js';
+import { deleteTodo } from '../Modules/action.js';
+import { connect } from 'react-redux';
 
 class Edit extends Component {
 
@@ -9,12 +12,14 @@ class Edit extends Component {
     this.state = {
       title: this.props.todo.title,
       description: this.props.todo.description,
+      id: this.props.todo.id,
       startDate: '',
     }
     this.handleTitle = this.handleTitle.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleTitle(event) {
@@ -47,19 +52,19 @@ class Edit extends Component {
       date: this.state.startDate,
       completed: false,
     }
-    const putTodo = (data) => {
-      return fetch(`http://localhost:3004/todos/${ data.id }`, {
-        method: 'PUT',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-    }
-    putTodo(newTodo);
+    this.props.updateTodo(newTodo);
+    window.location.reload();
+    this.props.closePopup();
+  }
+
+  handleDelete() {
+    this.props.deleteTodo(this.props.todo);
+    window.location.reload();
+    this.props.closePopup();
   }
 
   render() {
+    console.log('props', this.props.todo.id)
     return (
       <div className='popup'>
         <div className='popup-inner'>
@@ -91,6 +96,9 @@ class Edit extends Component {
               SAVE
             </button>
           </form>
+          <button className='delete-edit' onClick={ this.handleDelete }>
+            Delete
+          </button>
           <button className='close-edit' onClick={ this.props.closePopup }>
             CLOSE
           </button>
@@ -100,4 +108,13 @@ class Edit extends Component {
   }
 }
 
-export default Edit;
+function mapStateToProps(state) {
+  return {
+    todos: state.todos
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  { updateTodo, deleteTodo },
+)(Edit);

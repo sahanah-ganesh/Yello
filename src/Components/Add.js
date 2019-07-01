@@ -49,6 +49,7 @@ class Add extends Component {
       completed: false,
     }
     this.props.createTodo(newTodo);
+    this.props.closePopup();
   }
 
   render() {

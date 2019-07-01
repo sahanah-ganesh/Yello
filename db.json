@@ -13,6 +13,13 @@
       "description": "Gotta wash my gym clothes",
       "date": "2019-07-03T04:00:00.000Z",
       "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Make healthy dinner",
+      "description": "Fruits and veggies yumyum in my tumtum",
+      "date": "2019-07-04T04:00:00.000Z",
+      "completed": false
     }
   ],
   "completed": [
@@ -31,9 +38,9 @@
       "completed": true
     },
     {
-      "title": "Test",
-      "description": "test",
-      "date": "2019-07-02T04:00:00.000Z",
+      "title": "Watch Chernobyl",
+      "description": "Everyone is talking about it. Another Netflix Meme Marketing Machine sigh...",
+      "date": "2019-07-04T04:00:00.000Z",
       "completed": true,
       "id": 5
     }

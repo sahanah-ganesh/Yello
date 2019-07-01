@@ -196,7 +196,7 @@ body {
   text-align: center;
 }
 
-.input-title[type=text]:focus {
+.input-title[type=text]:hover {
   border: 3px solid red;
 }
 
@@ -214,7 +214,7 @@ body {
   margin-top: 1em;
 }
 
-.input-description[type=text]:focus {
+.input-description[type=text]:hover {
   border: 3px solid red;
 }
 
@@ -253,8 +253,8 @@ body {
   height: 4em;
   width: 50%;
   padding: 1.5em auto;
-  margin: 10em auto;
-  background-color: darkgrey;
+  margin: 8em auto;
+  background-color: slategray;
   border: none;
   border-radius: 3px;
   text-transform: uppercase;
@@ -266,5 +266,25 @@ body {
 
 .close-edit:hover {
   letter-spacing: 0.8em;
+  background-color: darkgray;
+}
+
+.delete-edit {
+  height: 4em;
+  width: 10%;
+  padding: 1.5em auto;
+  margin: 2em auto;
+  background-color: grey;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.2s cubic-bezier(.4, 0, .2, 1);
+  display: block;
+  color: white;
+}
+
+.delete-edit:hover {
+  letter-spacing: 0.2em;
   background-color: black;
 }

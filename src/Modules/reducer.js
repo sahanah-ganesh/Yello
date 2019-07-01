@@ -23,6 +23,12 @@ function rootReducer(state = initialState, action) {
     })
   }
 
+  if (action.type === 'UPDATE_TODO') {
+    return Object.assign({}, state, {
+      todos: state.todos.map((id) => id === action.id)
+    })
+  }
+
   if (action.type === 'CREATE_COMPLETED') {
     return Object.assign({}, state, {
       completed: state.completed.concat(action.payload)
