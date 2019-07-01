@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { createTodo } from '../Modules/action.js';
+import { connect } from 'react-redux';
 
 class Add extends Component {
 
@@ -46,16 +48,7 @@ class Add extends Component {
       date: this.state.startDate,
       completed: false,
     }
-    const postTodo = (data) => {
-      return fetch('http://localhost:3004/todos/', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-    }
-    postTodo(newTodo);
+    this.props.createTodo(newTodo);
   }
 
   render() {
@@ -99,4 +92,13 @@ class Add extends Component {
   }
 }
 
-export default Add;
+function mapStateToProps(state) {
+  return {
+    todos: state.todos,
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  { createTodo },
+)(Add);

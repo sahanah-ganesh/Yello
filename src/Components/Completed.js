@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import { getCompleted } from '../Modules/action.js';
+import { connect } from 'react-redux';
+import moment from 'moment';
 
 export class Completed extends Component {
+
+  componentDidMount() {
+    this.props.getCompleted();
+  }
 
   render() {
 
@@ -8,17 +15,52 @@ export class Completed extends Component {
       <div>
         <div className='todo-container'>
           <div className='todo-dimension'>
-            <h1 className='todo-header' contentEditable>Completed</h1>
-            <ul className='todo-inner-scroll'>
-            <li className='todo-item'>
-            </li>
-            </ul>
+            <h1 className='todo-header'>Completed</h1>
+              { this.props.completed.map((todo) => {
+                return (
+                  <ul key={todo.id} className='todo-inner-scroll'>
+                    <li className='todo-item'>
+                      <div>
+                        <h4
+                          style={{
+                            textDecoration: todo.completed ? 'line-through' : 'none'
+                          }}
+                          className='todo-title'>
+                          { todo.title }
+                        </h4>
+                        <h6
+                          className='todo-description'
+                          style={{
+                            textDecoration: todo.completed ? 'line-through' : 'none'
+                          }}>
+                          { todo.description }
+                        </h6>
+                        <h6
+                          className='todo-date'
+                          style={{
+                            textDecoration: todo.completed ? 'line-through' : 'none'
+                          }}>
+                          { moment(todo.date).format('MMMM DD YYYY') }
+                        </h6>
+                      </div>
+                    </li>
+                  </ul>
+                )
+              })}
           </div>
-            <button className='add-category-button' onClick={ () => this.addCategory }>Add new category</button>
         </div>
       </div>
     )
   }
 }
 
-export default Completed;
+function mapStateToProps(state) {
+  return {
+    completed: state.completed,
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  { getCompleted },
+)(Completed);

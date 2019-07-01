@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Edit from './Edit.js';
 import moment from 'moment';
 import Add from './Add.js';
+import { deleteTodo } from '../Modules/action.js';
+import { createCompleted } from '../Modules/action.js';
+import { connect } from 'react-redux';
 
 export class List extends Component {
 
@@ -35,29 +38,19 @@ export class List extends Component {
       popupEdit: state,
       popupAdd: state
     })
-    window.location.reload();
   }
 
   toggleCheck = (todo) => {
     console.log('todo', todo)
+    this.props.deleteTodo(todo);
     const updateTodo = {
-      id: todo.id,
       title: todo.title,
       description: todo.description,
       date: todo.date,
       completed: !todo.completed
     }
-    const markComplete = (data) => {
-      return fetch(`http://localhost:3004/todos/${ data.id }`, {
-        method: 'PUT',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-    }
-    markComplete(updateTodo);
-    window.location.reload();
+    console.log('update', updateTodo)
+    this.props.createCompleted(updateTodo);
   }
 
   render() {
@@ -66,7 +59,7 @@ export class List extends Component {
       <div>
         <div className='todo-container'>
           <div className='todo-dimension'>
-            <h1 className='todo-header' contentEditable>Miscellaneous</h1>
+            <h1 className='todo-header' contentEditable>Pending</h1>
               { this.props.todos.map((todo) => {
                 return (
                   <ul key={todo.id} className='todo-inner-scroll'>
@@ -120,4 +113,14 @@ export class List extends Component {
   }
 }
 
-export default List;
+function mapStateToProps(state) {
+  return {
+    todos: state.todos,
+    completed: state.completed
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  { deleteTodo, createCompleted },
+)(List);

@@ -13,23 +13,22 @@
       "description": "Gotta wash my gym clothes",
       "date": "2019-07-03T04:00:00.000Z",
       "completed": false
-    },
+    }
+  ],
+  "completed": [
     {
       "id": 3,
       "title": ":)",
       "description": "Eat",
       "date": "2019-07-02T04:00:00.000Z",
-      "completed": false
+      "completed": true
     },
     {
+      "id": 4,
       "title": "Dinner",
       "description": "With Friends",
       "date": "2019-07-02T04:00:00.000Z",
-      "completed": false,
-      "id": 4
+      "completed": true
     }
-  ],
-  "completed": [
-    {}
   ]
 }
