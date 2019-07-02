@@ -60,7 +60,7 @@ export class List extends Component {
       <div>
         <div className='todo-container'>
           <div className='todo-dimension'>
-            <h1 className='todo-header' contentEditable>Pending</h1>
+            <h1 className='todo-header'>Pending</h1>
               { this.props.todos.map((todo) => {
                 return (
                   <ul key={todo.id} className='todo-inner-scroll'>

@@ -47,6 +47,7 @@ export class Completed extends Component {
                   </ul>
                 )
               })}
+            <button className='add-todo-button'>Add new category...</button>
           </div>
         </div>
       </div>
