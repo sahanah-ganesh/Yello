@@ -6,7 +6,10 @@ class Home extends Component {
   render() {
     return (
       <Router>
-        <div className='Home'></div>
+        <div className='home'>
+          <button className='lhl-button'>LHL</button>
+          <button className='other-button'>OG</button>
+        </div>
       </Router>
     )
   }

@@ -7,6 +7,55 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  /* Half the height */
+  margin-left: -250px;
+  /* Half the width */
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.lhl-button {
+  width: 200px;
+  height: 200px;
+  background: rebeccapurple;
+  border-radius: 20%;
+  align-self: left;
+  font-size: xx-large;
+  font-weight: bold;
+  color: white;
+}
+
+.lhl-button:hover {
+  letter-spacing: 0.2em;
+  background: white;
+  color: rebeccapurple;
+}
+
+.other-button {
+  width: 200px;
+  height: 200px;
+  background: navy;
+  border-radius: 20%;
+  align-self: right;
+  font-size: xx-large;
+  font-weight: bold;
+  color: white;
+}
+
+.other-button:hover {
+  letter-spacing: 0.2em;
+  background: white;
+  color: navy;
+}
+
 /* TODO CONTAINER WITH TODO ITEMS */
 
 .todo-container {
