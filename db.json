@@ -6,19 +6,12 @@
       "description": "Summer body here I come!",
       "date": "2019-07-02T04:00:00.000Z",
       "completed": false
-    },
-    {
-      "id": 2,
-      "title": "Do Laundry",
-      "description": "Gotta wash my gym clothes",
-      "date": "2019-07-03T04:00:00.000Z",
-      "completed": false
     }
   ],
   "completed": [
     {
       "title": "Watch Chernobyl",
-      "description": "Everyone is talking about it. Another Netflix Meme Marketing Machine sigh...",
+      "description": "Everyone is talking about it...",
       "date": "2019-07-04T04:00:00.000Z",
       "completed": true,
       "id": 5
@@ -29,6 +22,20 @@
       "date": "2019-07-04T04:00:00.000Z",
       "completed": true,
       "id": 6
+    },
+    {
+      "title": "Do Laundry",
+      "description": "Gotta wash my gym clothes",
+      "date": "2019-07-03T04:00:00.000Z",
+      "completed": true,
+      "id": 7
+    },
+    {
+      "title": "Test",
+      "description": "Test",
+      "date": "2019-07-02T04:00:00.000Z",
+      "completed": true,
+      "id": 8
     }
   ],
   "untitled": []
