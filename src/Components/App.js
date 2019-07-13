@@ -1,34 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { getTodos } from '../Modules/action.js';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './Home.js';
 import List from './List.js';
-import Completed from './Completed.js';
 import '../Styles/App.css';
 
 export class App extends Component {
 
-  componentDidMount() {
-    this.props.getTodos();
-  }
-
   render() {
 
     return (
-      <div className='todo-container'>
-        <List todos={ this.props.todos }/>
-        <Completed/>
-      </div>
+      <Router>
+        <div>
+          <Route exact path='/' component={ Home }/>
+          <Route exact path='/:id' component={ List } />
+        </div>
+      </Router>
     )
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    todos: state.todos,
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  { getTodos },
-)(App);
+export default App;

@@ -83,3 +83,16 @@ export function getCompleted() {
       });
   }
 }
+
+export function getUsers() {
+  return function (dispatch) {
+    return fetch('http://localhost:3000/api/users')
+      .then(response => response.json())
+      .then(json => {
+        dispatch({
+          type: 'GET_USERS',
+          payload: json
+        })
+      });
+  }
+}

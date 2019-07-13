@@ -1,9 +1,16 @@
 const initialState = {
   todos: [],
-  completed: []
+  completed: [],
+  users: []
 }
 
 function rootReducer(state = initialState, action) {
+
+  if (action.type === 'GET_USERS') {
+    return Object.assign({}, state, {
+      users: state.users.concat(action.payload.data)
+    })
+  }
 
   if (action.type === 'GET_TODOS') {
     return Object.assign({}, state, {

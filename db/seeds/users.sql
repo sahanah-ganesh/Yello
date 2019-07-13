@@ -1,29 +1,31 @@
-INSERT INTO users (username, groupID) VALUES
+INSERT INTO users (username, img, groupID) VALUES
   (
-    'Renae',
+    'Nae',
+    'https://media.licdn.com/dms/image/C5603AQFS2I156jgyvw/profile-displayphoto-shrink_800_800/0?e=1568246400&v=beta&t=0CGv2OS4VWZC9UMOAGok5iw67mxqoxYI19x9gQO5flU',
     '2'
   ),
   (
     'Shaun',
+    'https://media.wonderlandmagazine.com/uploads/2018/06/180416_SCALA_SHAWN_MENDES_09_024.jpg',
     '2'
   ),
   (
-    'Arianne',
-    '2'
-  ),
-  (
-    'Tessrah',
+    'Ari',
+    'https://media.licdn.com/dms/image/C4D03AQFZZDBztoQf7g/profile-displayphoto-shrink_800_800/0?e=1568246400&v=beta&t=MyDNRO1C37rtPdvdOHmXQRNKBG76KS5nPAImWBZnrRQ',
     '2'
   ),
   (
     'Leticia',
+    'https://media.licdn.com/dms/image/C4D03AQHc4AD6jbVzhA/profile-displayphoto-shrink_800_800/0?e=1568246400&v=beta&t=-t8Mr_PE1ZDPKdaYjtdXzDCu5RanZhYkIcWJLlM9mAI',
     '1'
   ),
   (
     'Tim',
+    'https://media.licdn.com/dms/image/C5103AQEKOf4Z-NamqQ/profile-displayphoto-shrink_800_800/0?e=1568246400&v=beta&t=5l1KJzoHZbAijkOJJ2QzmmtK5cY0oLZs236_RsNZRk0',
     '1'
   ),
   (
     'Vasily',
+    'https://media.licdn.com/dms/image/C4D03AQHxjB7jkJlvtw/profile-displayphoto-shrink_800_800/0?e=1568246400&v=beta&t=81FnuQD-z80ptjZzwUGdCDWUnal42rBComDff_h2xI4',
     '1'
   );
